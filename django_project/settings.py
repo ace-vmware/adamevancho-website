@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = 'pyij=al6t(ra8ourd6ai17u-5)i&48^v!z8dut4c_awv31f694'
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ['DJANGO_DEBUG_VALUE'] == 'True')
 
 ALLOWED_HOSTS = ['adamevancho-website.herokuapp.com',
                  'adamevancho.com']
