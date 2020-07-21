@@ -122,6 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Static Root for Heroku
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Static Root for Localhost
 # STATIC_ROOT = os.path.join(BASE_DIR, 'Django', 'django_project', 'sfdcTools', 'root')
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'sfdcTools', 'static'),
 #                     os.path.join(BASE_DIR, 'sfdcTools', 'boot')]
