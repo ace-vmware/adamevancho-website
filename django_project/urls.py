@@ -22,8 +22,10 @@ from users import views as user_views
 # path('', include('blog.urls')),
 
 urlpatterns = [
+    # Resume URL routes
+    path('', include('resume.urls')),
     # Blog URL routes
-    path('', include('blog.urls')),
+    path('blog/', include('blog.urls')),
     # Admin URL routes
     path('admin/', admin.site.urls),
     # sfdcTools route
