@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'resume.apps.ResumeConfig',
-    'sfdcTools.apps.SfdctoolsConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
