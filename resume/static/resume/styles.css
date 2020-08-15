@@ -68,6 +68,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  padding-right:0 !important;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -476,8 +477,19 @@ mark,
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
 }
 
 .img-thumbnail {
@@ -5407,6 +5419,7 @@ a.close.disabled {
 }
 
 .modal-dialog {
+.modal-dialog
   position: relative;
   width: auto;
   margin: 0.5rem;
@@ -5480,7 +5493,10 @@ a.close.disabled {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
 
 .modal-backdrop {
   position: fixed;
@@ -5492,7 +5508,7 @@ a.close.disabled {
   background-color: #000;
 }
 .modal-backdrop.fade {
-  opacity: 0;
+  opacity: 50;
 }
 .modal-backdrop.show {
   opacity: 0.5;
@@ -10055,16 +10071,19 @@ p.lead {
     flex-direction: column;
     width: 17rem;
     height: 100vh;
+    padding-right: 0px !important;
   }
   #sideNav .navbar-brand {
     display: flex;
     margin: auto auto 0;
     padding: 0.5rem;
+
   }
   #sideNav .navbar-brand .img-profile {
     max-width: 12rem;
     max-height: 15rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
+
   }
   #sideNav .navbar-collapse {
     display: flex;
@@ -10072,13 +10091,16 @@ p.lead {
     flex-grow: 0;
     width: 100%;
     margin-bottom: auto;
+
   }
   #sideNav .navbar-collapse .navbar-nav {
     flex-direction: column;
     width: 100%;
+
   }
   #sideNav .navbar-collapse .navbar-nav .nav-item {
     display: block;
+
   }
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
     display: block;
@@ -10132,4 +10154,56 @@ section.resume-section .resume-section-content {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+}
+
+.portfolio .portfolio-item {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  max-width: 25rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.portfolio-item:hover {opacity: .20;}
+
+.portfolio .portfolio-item .portfolio-item-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  background-color: rgba(26, 188, 156, 0.9);
+}
+.portfolio .portfolio-item .portfolio-item-caption:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+  font-size: 1.5rem;
+   cursor: pointer;
+}
+
+.portfolio-modal .portfolio-modal-title {
+  font-size: 2.25rem;
+  line-height: 2rem;
+   cursor: pointer;
+}
+@media (min-width: 992px) {
+  .portfolio-modal .portfolio-modal-title {
+    font-size: 3rem;
+    line-height: 2.5rem;
+    cursor: pointer;
+  }
+}
+.portfolio-modal .close {
+  position: absolute;
+  z-index: 1;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: #1abc9c;
+  opacity: 1;
 }
