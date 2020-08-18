@@ -7,3 +7,11 @@ class Modal(models.Model):
 
     def __str__(self):
         return self.projectName
+
+class DarkMode(models.Model):
+    currentMode = models.CharField(max_length=5)
+    path = models.CharField(max_length=20)
+    is_on = models.BooleanField()
+
+    def __str__(self):
+        return self.currentMode
