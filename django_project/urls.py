@@ -17,13 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url, include as incl
 from users import views as user_views
-from resume.resources import DarkModeResource
-
 # If left blank, localhost:8000 will be directed to path('', views.home, name='blog-home')
 # Like so:
 # path('', include('blog.urls')),
-
-DarkModeResource = DarkModeResource()
 
 urlpatterns = [
     # Resume URL routes
@@ -35,9 +31,7 @@ urlpatterns = [
     # sfdcTools route
     path('sfdcTools/', include('sfdcTools.urls')),
     # Login Path
-    path('register/', user_views.register, name='register'),
-    # API Path
-    url(r'^resume/', incl(DarkModeResource.urls))
+    path('register/', user_views.register, name='register')
 ]
 
 
