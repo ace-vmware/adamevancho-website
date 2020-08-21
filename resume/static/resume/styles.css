@@ -5497,7 +5497,6 @@ a.close.disabled {
   transition: 0.3s;
 }
 
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -5508,7 +5507,7 @@ a.close.disabled {
   background-color: #000;
 }
 .modal-backdrop.fade {
-  opacity: 50;
+  opacity: .0;
 }
 .modal-backdrop.show {
   opacity: 0.5;
