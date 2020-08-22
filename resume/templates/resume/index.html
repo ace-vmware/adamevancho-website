@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" type="text/css" href="{% static 'resume/styles.css' %}">
+        <link disabled id="dark-reader" rel="stylesheet" href="{% static 'resume/dark.css' %}">
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -42,6 +43,20 @@
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
+                    <!-- Delete below later -->
+                    <div class="mb-5">
+                        <a href="javascript:void(0)" onclick="dark_toggle();return false;" title="Toggle night mode">
+                            <i id="dark-reader-icon" class="fa fa-moon fa-pulse" style="color:rgb(109, 146, 190); animation-iteration-count: 1;"></i>
+                        </a>
+                        <script>
+                         if (localStorage.getItem("darkreader") == "enabled") {
+                             document.getElementById("dark-reader").disabled = false;
+                         } else {
+                             document.getElementById("dark-reader").disabled = true;
+                         }
+                        </script>
+                    </div>
+                    <!-- Delete above later -->
                     <h1 class="mb-0">
                         Adam
                         <span class="text-primary">Evancho</span>
@@ -158,7 +173,7 @@
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Heroku & AWS
+                            Hosting: Heroku & AWS
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
@@ -166,7 +181,7 @@
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Microsoft SQL Server, Salesforce, Mobile Device Management (MDM)
+                            Softwares: Microsoft SQL Server, JIRA, Confluence, Salesforce, Mobile Device Management (MDM)
                         </li>
                     </ul>
                 </div>
@@ -209,7 +224,8 @@
                         <!-- Portfolio Item 1-->
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                                <img class="img-fluid" src="{% static 'resume/portfolio/browser.png' %}" alt="my website" />
+                                <div class="portfolio-item d-flex align-items-center justify-content-center">
+                                    <img class="img-portfolio" src="{% static 'resume/portfolio/browser.png' %}" alt="my website" /></div>
                                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center">
                                 <h4>This Website</h4></div>
                             </div>
@@ -217,15 +233,16 @@
                         <!-- Portfolio Item 2-->
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                                <img class="img-fluid" src="{% static 'resume/portfolio/swap.png' %}" alt="my website" />
-                                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item d-flex align-items-center justify-content-center">
+                                    <img class="img-portfolio" src="{% static 'resume/portfolio/swap.png' %}" alt="ASR" /></div>                                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <h4>Auto Squad Reassignment</h4></div>
                             </div>
                         </div>
                         <!-- Portfolio Item 2-->
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                                <img class="img-fluid" src="{% static 'resume/portfolio/capitol.png' %}" alt="my website" />
+                                <div class="portfolio-item d-flex align-items-center justify-content-center">
+                                    <img class="img-portfolio" src="{% static 'resume/portfolio/capitol.png' %}" alt="fedbot" /></div>
                                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <h4>FedBot</h4></div>
                             </div>
@@ -241,6 +258,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="{% static 'resume/js/scripts.js' %}"></script>
+            <script src="{% static 'resume/js/darkmode.js' %}"></script>
         </div>
     </body>
 </html>
