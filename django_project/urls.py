@@ -28,8 +28,6 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     # Admin URL routes
     path('admin/', admin.site.urls),
-    # sfdcTools route
-    path('sfdcTools/', include('sfdcTools.urls')),
     # Login Path
     path('register/', user_views.register, name='register')
 ]
