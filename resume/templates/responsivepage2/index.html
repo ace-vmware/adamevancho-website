@@ -1,0 +1,336 @@
+{% load static %}
+
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="/reset.css"> -->
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0% auto;
+    }
+    nav {
+        align-items: baseline;
+        background-color: rgba(77, 77, 77, 0.2);
+        color: white;
+        display: flex;
+        height: auto;
+        justify-content: space-between;
+        width: 100%;
+    }
+    nav h1 {
+        justify-self: flex-start;
+        margin: 1em 1em 1em 2em;
+    }
+    nav ul {
+        display: block;
+        justify-self: flex-end;
+        margin: 1em 2em 1em 1em;
+    }
+    nav li {
+        display: inline;
+        font-weight: normal;
+        list-style: none;
+        list-style-type: none;
+        overflow: hidden;
+        margin: .5em;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+    }
+    nav button {
+        background-color: rgb(8, 104, 214);
+        border: .1em solid rgba(8, 149, 214, 0);
+        border-radius: 2px;
+        color: white;
+        font-weight: bold;
+        margin: 0em 0em 0em 0em;
+        padding: .5em .8em .5em .8em;
+        box-shadow: 4px 4px 5px rgba(0, 0, 0, .2);
+    }
+    .header {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 6em 1em 1em 3em;
+        width: 33%;
+    }
+    .header h1 {
+        margin: unset;
+    }
+    .header p {
+        margin: 1em 0em 1em 0em;
+    }
+    .header button {
+        background-color: rgb(8, 104, 214);
+        border: .1em solid rgba(8, 149, 214, 0);
+        border-radius: .2em;
+        color: white;
+        margin: em 0em 0em 0em;
+        padding: .5em 1em .5em 1em;
+        font-size: .8em;
+        text-align: center;
+        width: 30%;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, .5);
+    }
+    .hero-img {
+        /* background-image: url(images/hero-image.png); */
+        background-image: url("{% static 'resume\responsivepage2assets\images\hero-image.png' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30em;
+        width: 100%;
+    }
+    .new-job-offer-banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 2em 3em 0em 3em;
+    }
+    .new-job-offer-banner a {
+        text-decoration: none;
+        color: rgb(8, 104, 214);
+        font-size: .9em;
+        font-weight: bold;
+    }
+    .job-offer-card-row {
+        display: flex;
+        flex-direction: row;
+        margin: 0em 3em 0em 3em;
+    }
+    .job-offer-card {
+        display: block;
+        border-right: 1px solid rgb(0, 0, 0);
+        margin: 0em 1em 0em 0em;
+        width: 33%;
+    }
+    .job-offer-card-position-time {
+        display: flex;
+        margin-bottom: 0em;        
+        width: 100%;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+    .job-offer-card-position-time p {
+        color: gray;
+        margin-right: 1em;
+    }
+    .job-offer-card-position-time h3 {
+        margin-bottom: 0em;
+        color: rgb(8, 104, 214);
+    }
+    .job-offer-card-loc {
+        margin-top: 0px;
+        font-size: smaller;
+    }
+    .job-offer-card-desc-btn {
+        display: flex;
+        margin-right: 1em;
+    }
+    .job-offer-card-desc-btn p {
+        margin: 0% auto;
+        color: gray;
+        padding-right: 35px;
+        text-align: left;
+    }
+    .job-offer-card-desc-btn button {
+        align-self: flex-end;
+        background-color: rgb(8, 104, 214);
+        border: .1em solid rgba(8, 149, 214, 0);
+        border-radius: .2em;
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, .2);
+        color: white;
+        font-weight: 800;
+        margin: 0em 0em 0em 1em;
+        text-align: center;
+        width: 10%;
+    }
+    .feature-companies {
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+    .feature-companies ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin: 0em;
+        padding: 0em;
+    }
+    .feature-companies li {
+        display: inline;
+        padding: 1em;
+        margin: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .feature-companies img {
+        display: block;
+        margin: 1em 1em 1em 1em;
+        padding: 1em;
+    }
+    .feature-companies button {
+        display: block;
+        margin: 1em auto;
+    }
+    .feature-companies-container {
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 100%;
+        margin-bottom: 1em;
+    }
+    .feature-companies-scroll-btn {
+        align-self: flex-end;
+        background-color: rgb(8, 104, 214);
+        border: .1em solid rgba(8, 149, 214, 0);
+        border-radius: 100%;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
+        color: white;
+        font-weight: 800;
+        margin: 0em 0em 0em 0em;
+        text-align: center;
+        padding: .5em .7em .5em .7em;
+    }
+    @media (max-width: 900px) {
+        .feature-companies ul {
+            overflow: scroll;
+        }
+    }
+    .banner {
+        display: flex;
+        /* padding: 1em 2em 1em 2em; */
+        margin: 0em 3em 0em 3em;
+        justify-items: center;
+        background-image: url("{% static 'resume\responsivepage2assets\images\newsletter-image.png' %}"), linear-gradient(45deg, black 350px, rgb(73, 96, 111));
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .banner-box1 {
+        color: white;
+        width: 50%;
+        padding: 2em;
+    }
+    .banner input {
+        border: 0px solid rgba(8, 149, 214, 0);
+        border-radius: 2px;
+        padding: .5em 1em .5em 1em;
+    }
+    .banner button {
+        align-self: flex-end;
+        background-color: rgb(8, 104, 214);
+        border: 0px solid rgba(8, 149, 214, 0);
+        border-radius: 2px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
+        color: white;
+        font-weight: bold;
+        margin: 0em 0em 0em 1em;
+        padding: .5em 1em .5em 1em;
+        text-align: center;
+    }
+    footer ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
+    footer li {
+        margin: 1em;
+        font-size: smaller;
+        color: gray;
+    }
+    footer a {
+        text-decoration: none;
+    }
+
+</style>
+</head>
+<body>
+    <div class="hero-img">
+        <nav>
+            <h1>JJO</h1>
+            <ul>
+                <li><a href="#">Discounts</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><button><a href="#">Login</a></button></li>
+            </ul>
+        </nav>
+        <div class="header">
+            <h1>Juniors make IT work.</h1>
+            <p>Hire and invest in highly skilled juniors now.</p>
+            <button><b>Post Offer Now</b></button>
+        </div>
+    </div>
+    <div class="new-job-offer-banner">
+        <h1>Newest Job Offers</h1>
+        <a href="#">View all job offers</a>
+    </div>
+    <div class="job-offer-card-row">
+        <div class="job-offer-card">
+            <div class="job-offer-card-position-time">
+                <h3>Junior Java Developer</h3>
+                <p>2 hours ago</p>
+            </div>
+            <p class="job-offer-card-loc"><b>PicSaas</b> Wrclaw, Polska</p>
+            <div class="job-offer-card-desc-btn">
+                <p>I am currently looking for a Java Developer. Project for Public Sector Location: Wroclaw (during the pandemic remote work) $ up to PLN 550 net / MD B2B</p>
+                <button>></button>
+            </div>
+        </div>
+        <div class="job-offer-card">
+            <div class="job-offer-card-position-time">
+                <h3>Junior Java Developer</h3>
+                <p>2 hours ago</p>
+            </div>
+            <p class="job-offer-card-loc"><b>PicSaas</b> Wrclaw, Polska</p>
+            <div class="job-offer-card-desc-btn">
+                <p>I am currently looking for a Java Developer. Project for Public Sector Location: Wroclaw (during the pandemic remote work) $ up to PLN 550 net / MD B2B</p>
+                <button>></button>
+            </div>
+        </div>
+        <div class="job-offer-card">
+            <div class="job-offer-card-position-time">
+                <h3>Junior Java Developer</h3>
+                <p>2 hours ago</p>
+            </div>
+            <p class="job-offer-card-loc"><b>PicSaas</b> Wrclaw, Polska</p>
+            <div class="job-offer-card-desc-btn">
+                <p>I am currently looking for a Java Developer. Project for Public Sector Location: Wroclaw (during the pandemic remote work) $ up to PLN 550 net / MD B2B</p>
+                <button>></button>
+            </div>
+        </div>
+    </div>
+    <div class="feature-companies">
+        <h1>Feature Companies</h1>
+        <ul>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>Grande Parade</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>Grande Parade</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>Seargin</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>DEX Ventures</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>NBC</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>SVT SP Zoo</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>DG Tech</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>PickSaaS</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>BlackRose</li>
+            <li><div class="feature-companies-container"><a href="#"><img src="{% static 'resume\responsivepage2assets\images\icon-briefcase.png' %}"></a></div>FrontKom</li>
+            <li><button class="feature-companies-scroll-btn">></button></li>
+        </ul>
+    </div>
+    <div class="banner">
+        <div class="banner-box1">
+        	<h1>Receive new job offers.</h1>
+        	<p>Want to know as soon as a new job offer is posted on our website? Subscribe to our weekly job offer digest.</p>
+        	<input placeholder="Enter e-mail address"><button>Subscribe</button>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <a href="#"><li>Job Offers</li></a>
+            <a href="#"><li>Companies</li></a>
+            <a href="#"><li>Discounts</li></a>
+            <a href="#"><li>About Us</li></a>
+            <a href="#"><li>Juniors</li></a>
+            <a href="#"><li>FAQ</li></a>
+            <a href="#"><li>Blog</li></a>
+            <a href="#"><li>Terms</li></a>
+            <a href="#"><li>Privacy Policy</li></a>
+        </ul>
+    </footer>
+</body>

@@ -1,0 +1,139 @@
+{% load static %}
+
+<head>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            margin: 0px;
+        }
+        .box1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgb(255, 255, 255);
+            width: 30%;
+            height: 100%;
+        }
+        .box1-forwardlogo {
+            position: relative;
+            bottom: 3%;
+            align-self: center;
+            width: 25%;
+            height: auto;
+        }
+        #box1-createaccount {
+            padding-bottom: 40px;
+        }
+        #box1-createaccount p {
+            text-align: center;
+            padding: unset;
+            margin-top: 2em;
+            color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .box1 p {
+            align-self: center;
+             font-family: Veranda, Arial, Helvetica, Ariel, sans-serif;
+            color: gray;
+            margin: 0px 20px 0px 20px;
+        }
+        .box1 h1 {
+            font-family: Veranda, Helvetica, Ariel, sans-serif;
+            margin-bottom: -10px;
+            text-align: center;
+        }
+        .box2 {
+            background-color: black;
+            width: 70%;
+            height: 100%;
+        }
+        .rightimg {
+            background-image: url("{%static 'resume\responsivepage1assets\images\bg.png'%}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            margin: 0%;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-self: center;
+        }
+        input {
+            width: 300px;
+            padding: 1em;
+            margin: .5em;
+            border:1px solid rgba(221, 221, 221, 100);
+            border-radius: 4px;
+        }
+        @media (max-width: 1000px) {
+            input {
+                width: 75%;
+            }
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            list-style-type: none;
+            overflow: hidden;
+            align-self: center;
+            margin-right: 3em;
+        }
+        ul li {
+            padding: .5em 2em .2em 2em;
+            margin: 0em .5em 0em .5em; 
+            border: 1px solid rgba(221, 221, 221, 0);
+        }
+        .google-ul-li {
+            border:1px solid rgba(221, 221, 221, 100);
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+        }
+        .facebook-ul-li {
+            border-radius: 5px;
+            background-color: rgb(59, 89, 152);
+        }
+        .twitter-ul-li {
+            border-radius: 5px;
+            background-color: rgb(0, 172, 238);
+        }
+        li a {
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            
+        }
+        
+    </style>
+</head>
+<body id="container">
+    <div class="box1">         
+            <img class="box1-forwardlogo" src="{%static 'resume\responsivepage1assets\images\logo.png'%}">
+            <div id="box1-createaccount">
+                <h1>Create an account on Forward</h1>
+                <p>Already have an account? <a href="#">Login.</a></p> 
+            </div>         
+        <form action="submit">
+            <input type="text" placeholder="Enter e-mail address">
+            <input type="password" placeholder="Create password">
+
+        </form>
+        <p>Or create an account with</p>
+        <ul>
+            <li class="google-ul-li"><a href="#"><img src="{%static 'resume\responsivepage1assets\images\google-icon.png'%}"></a></li>
+            <li class="facebook-ul-li"><a href="#"><img src="{%static 'resume\responsivepage1assets\images\facebook-icon.png'%}"></a></li>
+            <li class="twitter-ul-li"><a href="#"><img src="{%static 'resume\responsivepage1assets\images\twitter-icon.png'%}"></a></li>
+        </ul>
+        <p>By signing up, you accept our <a href="#"><b>Terms of Use</b></a> and <a href="#"><b>Privacy Policy.</b></a></p>
+    </div>
+    <div class="box2">
+        <div class="rightimg"></div>
+    </div>
+</body>

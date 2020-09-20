@@ -8,3 +8,9 @@ def home(request):
 
 def homeDark(request):
     return render(request, 'resume/index_dark.html')
+
+def responsivePage1(request):
+    return render(request, 'responsivepage1/index.html')
+
+def responsivePage2(request):
+    return render(request, 'responsivepage2/index.html')

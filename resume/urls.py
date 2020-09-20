@@ -4,5 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='resume-home'),
-    path('dark', views.homeDark, name='resume-dark')
+    path('dark', views.homeDark, name='resume-dark'),
+    path('responsivepage1', views.responsivePage1, name='resume-responsivepage1'),
+    path('responsivepage2', views.responsivePage2, name='resume-responsivepage2')
     ]
