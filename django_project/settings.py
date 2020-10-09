@@ -126,11 +126,11 @@ STATIC_URL = '/static/'
 # Static Root for Heroku
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_ROOT = os.path.join(BASE_DIR, 'Django', 'django_project', 'staticfiles')
-
-# Static Root for Localhost
-# STATIC_ROOT = os.path.join(BASE_DIR, 'Django', 'django_project', 'sfdcTools', 'root')
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'sfdcTools', 'static'),
-#                     os.path.join(BASE_DIR, 'sfdcTools', 'boot')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'resume', 'static', 'resume', 'responsivepage3assets', 'images'),
+    os.path.join(BASE_DIR, 'resume', 'static', 'resume', 'responsivepage3assets', 'design'),
+    os.path.join(BASE_DIR, 'resume', 'static', 'resume', 'responsivepage3assets', 'styles')
+]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

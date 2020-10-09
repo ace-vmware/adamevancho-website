@@ -14,3 +14,6 @@ def responsivePage1(request):
 
 def responsivePage2(request):
     return render(request, 'responsivepage2/index.html')
+
+def responsivePage3(request):
+    return render(request, 'responsivepage3/index.html')
