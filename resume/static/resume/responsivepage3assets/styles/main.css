@@ -156,10 +156,10 @@ nav .hamburger {
 }
 .hero-right {
     display: block;
-    background-image: url("bg-intro-desktop.svg");
+    /* background-image: url("bg-intro-desktop.svg"); */
     /* background-image: url('/resume/static/resume/responsivepage3assets/images/bg-intro-desktop.svg'); */
     /* background-image: url('\resume\static\resume\responsivepage3assets\images\bg-intro-desktop.svg'); */
-    /* background-image: url("{% static 'bg-intro-desktop.svg' %}"); */
+    background-image: url("{% static '\bg-intro-desktop.svg' %}");
     /* background-image: url("{% static '\resume\static\resume\responsivepage3assets\images\bg-intro-desktop.svg' %}"); */
     /* background-image: url("{% static '/resume/static/resume/responsivepage3assets/images/bg-intro-desktop.svg'%}"); */
     background-position: 20vw -10vw;
